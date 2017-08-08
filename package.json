@@ -1,9 +1,18 @@
 {
 
-"dependencies": {
-    "bootstrap": "3.3.7"
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "express": "^4.4.5",
+    "ws": "0.4.x"
 
-}
+  },
+
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "start": "node client/webrtc.js"
+  }
 
 
 }

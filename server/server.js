@@ -59,4 +59,3 @@ wss.broadcast = function(data) {
     });
 };
 
-//console.log('Server running. Visit https://localhost:' + HTTPS_PORT + ' in Firefox/Chrome (note the HTTPS; there is no HTTP -> HTTPS redirect!)');

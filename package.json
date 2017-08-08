@@ -12,7 +12,7 @@
   },
 
   "scripts": {
-    "start": "server/server.js"
+    "start": "node server/server.js"
   }
 
 }

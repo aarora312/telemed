@@ -1,7 +1,7 @@
-const HTTPS_PORT = process.env.port || 8080;
+const HTTP_PORT = process.env.port || 8080;
 
 const fs = require('fs');
-const https = require('https');
+const http = require('http');
 const WebSocket = require('ws');
 const WebSocketServer = WebSocket.Server;
 
@@ -27,8 +27,8 @@ var handleRequest = function(request, response) {
     }
 };
 
-var httpsServer = https.createServer(serverConfig, handleRequest);
-httpsServer.listen(HTTPS_PORT);
+var httpServer = http.createServer(serverConfig, handleRequest);
+httpServer.listen(HTTP_PORT);
 
 // ----------------------------------------------------------------------------------------
 

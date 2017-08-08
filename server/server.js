@@ -16,7 +16,7 @@ const serverConfig = {
 // ----------------------------------------------------------------------------------------
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve('client/index.html'));
+    res.sendFile(path.resolve(___dirname, 'client/index.html'));
 })
 // Create a server for the client html page
 /*var handleRequest = function(request, response) {

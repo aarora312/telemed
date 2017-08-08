@@ -33,7 +33,7 @@ httpServer.listen(HTTP_PORT);
 // ----------------------------------------------------------------------------------------
 
 // Create a server for handling websocket calls
-var wss = new WebSocketServer({server: httpsServer});
+var wss = new WebSocketServer({server: httpServer});
 
 wss.on('connection', function(ws) {
     ws.on('message', function(message) {

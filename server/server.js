@@ -1,5 +1,3 @@
-const HTTP_PORT = process.env.port || 8080;
-
 const fs = require('fs');
 const http = require('http');
 const WebSocket = require('ws');
@@ -61,4 +59,4 @@ wss.broadcast = function(data) {
     });
 };
 
-console.log('Server running. Visit https://localhost:' + HTTPS_PORT + ' in Firefox/Chrome (note the HTTPS; there is no HTTP -> HTTPS redirect!)');
+//console.log('Server running. Visit https://localhost:' + HTTPS_PORT + ' in Firefox/Chrome (note the HTTPS; there is no HTTP -> HTTPS redirect!)');

@@ -1,4 +1,4 @@
-const HTTPS_PORT = 8443;
+const HTTPS_PORT = process.env.port || 8080;
 
 const fs = require('fs');
 const https = require('https');
@@ -28,7 +28,7 @@ var handleRequest = function(request, response) {
 };
 
 var httpsServer = https.createServer(serverConfig, handleRequest);
-httpsServer.listen(HTTPS_PORT, '0.0.0.0');
+httpsServer.listen(HTTPS_PORT);
 
 // ----------------------------------------------------------------------------------------
 

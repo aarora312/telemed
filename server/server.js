@@ -4,6 +4,10 @@ const fs = require('fs');
 const http = require('http');
 const WebSocket = require('ws');
 const WebSocketServer = WebSocket.Server;
+var express = require("express");
+var app = express();
+var port = process.env.PORT || 5000;
+
 
 // Yes, SSL is required
 const serverConfig = {
@@ -13,8 +17,11 @@ const serverConfig = {
 
 // ----------------------------------------------------------------------------------------
 
+app.get('/', function (req, res) {
+    res.sendFile('client/index.html');
+})
 // Create a server for the client html page
-var handleRequest = function(request, response) {
+/*var handleRequest = function(request, response) {
     // Render the single client html file for any request the HTTP server receives
     console.log('request received: ' + request.url);
 
@@ -25,15 +32,18 @@ var handleRequest = function(request, response) {
         response.writeHead(200, {'Content-Type': 'application/javascript'});
         response.end(fs.readFileSync('client/webrtc.js'));
     }
-};
+};*/
 
-var httpServer = http.createServer(serverConfig, handleRequest);
-httpServer.listen(HTTP_PORT);
+app.use(express.static(__dirname + "/"));
+var server = http.createServer(app);
+server.listen(port);
+/*var httpServer = http.createServer(serverConfig, handleRequest);
+httpServer.listen(HTTP_PORT);*/
 
 // ----------------------------------------------------------------------------------------
 
 // Create a server for handling websocket calls
-var wss = new WebSocketServer({server: httpServer});
+var wss = new WebSocketServer({server: server});
 
 wss.on('connection', function(ws) {
     ws.on('message', function(message) {

@@ -5,7 +5,7 @@ const WebSocketServer = WebSocket.Server;
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 5000;
-var path = require('path');
+var path = require("path");
 
 
 // Yes, SSL is required

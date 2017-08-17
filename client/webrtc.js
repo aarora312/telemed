@@ -11,7 +11,7 @@ var peerConnectionConfig = {
 };
 
 function pageReady() {
-    
+
     //hiding end button, connection not yet established
     document.getElementById("end").style.visibility="hidden"; 
 
@@ -19,11 +19,12 @@ function pageReady() {
 
     localVideo = document.getElementById('localVideo');
     remoteVideo = document.getElementById('remoteVideo');
-
+    
     var host = location.origin.replace(/^http/, 'ws');
-    var serverConnection = new WebSocket(host);
-    /*serverConnection = new WebSocket('wss://' + window.location.hostname + ':8443');
-    serverConnection.onmessage = gotMessageFromServer;*/
+    var serverConnection = new WebSocket(host); 
+
+    //serverConnection = new WebSocket('wss://' + window.location.hostname + ':8443');
+    serverConnection.onmessage = gotMessageFromServer;
 
     var constraints = {
         video: true,

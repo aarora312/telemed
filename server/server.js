@@ -1,13 +1,3 @@
-const fs = require('fs');
-const http = require('http');
-const WebSocket = require('ws');
-const WebSocketServer = WebSocket.Server;
-var express = require("express");
-var app = express();
-var port = process.env.PORT || 5000;
-var path = require("path");
-
-
 /*const HTTPS_PORT = 8443;
 
 const fs = require('fs');
